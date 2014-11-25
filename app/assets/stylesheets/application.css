@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+
+.ace-monokai {
+background-color: #272822;
+color: #F8F8F2;
+height: 400px;
+}

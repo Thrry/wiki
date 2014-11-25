@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 
 gem 'faker'
 gem 'redcarpet'
+gem 'ace-rails-ap'
 
 
 # Use ActiveModel has_secure_password
