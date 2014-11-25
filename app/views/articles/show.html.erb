@@ -1,0 +1,13 @@
+
+<h1><%= @article.title %></h1>
+<p><%= @article.content %></p>
+<span><%= @article.created_at.strftime("%d %B %Y") %></span>
+
+<%=link_to "update", edit_article_path %>
+
+<%= link_to "Delete", article_path,
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
+<hr>
+<%=link_to "tous les articles", articles_path, class: "btn btn-large btn-default" %>
