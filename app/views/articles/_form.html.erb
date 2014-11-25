@@ -1,21 +1,32 @@
 
-
-
-<!-- <div id="editor">function foo(items) {
-    var x = "All this is syntax highlighted";
-    return x;
-}</div>
- -->
-
 <%= form_for(@article) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
   <%= f.label :content %>
-  <%= f.text_area :content, id: :editor, cols: 40, rows: 20 %>
+  <%= f.text_area :content, id: "editor", cols: 40, rows: 20 %>
 
   <%= f.submit %>
 <% end %>
+
+
+
+    <script>
+      var editor = ace.edit("editor");
+      editor.setTheme("ace/theme/monokai");
+      editor.getSession().setMode("ace/mode/html");
+
+
+      $(document).ready(function() {
+
+        $( "form[class='edit_article']" ).submit(function( event ) {
+           var contenu = editor.getValue();
+           var textarea = "<textarea style='display:none' name='article[content]'>"+contenu+'</textarea>';
+           $(this).prepend(textarea);
+         });
+       });
+    </script>
+
 
 
 
